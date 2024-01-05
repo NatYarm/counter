@@ -1,0 +1,56 @@
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  margin: 0 auto;
+  width: 300px;
+  height: 350px;
+  border: 3px solid rgb(7, 112, 204);
+  border-radius: 15px;
+}
+
+.display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgb(7, 112, 204);
+  border-radius: 15px;
+  height: 180px;
+  margin: 20px;
+  font-size: 80px;
+  font-weight: 600;
+  color: rgb(7, 112, 204);
+}
+
+.limit {
+  color: red;
+}
+
+.buttonsContainer {
+  display: flex;
+  margin-top: 50px;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  border: 3px solid rgb(7, 112, 204);
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: rgb(7, 112, 204);
+  cursor: pointer;
+}
+
+.disabled {
+  color: #fff;
+  background: #c6d4e2;
+  opacity: 0.5;
+  border: 3px solid #c6d4e2;
+  cursor: not-allowed;
+}
