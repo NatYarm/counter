@@ -11,3 +11,11 @@ const Display = ({ displayNumber }: PropsType) => {
 };
 
 export default Display;
+
+// const Display = ({ displayNumber }: PropsType) => {
+//   return (
+//     <div className={displayNumber === 5 ? 'display limit' : 'display'}>
+//       {displayNumber}
+//     </div>
+//   );
+// };

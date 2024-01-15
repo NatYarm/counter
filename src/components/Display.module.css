@@ -1,0 +1,45 @@
+.display {
+  display: flex;
+  border: 3px solid rgb(7, 112, 204);
+  color: rgb(7, 112, 204);
+  border-radius: 15px;
+  height: 180px;
+  margin: 20px;
+}
+
+.counter {
+  align-items: center;
+  justify-content: center;
+  font-size: 100px;
+  font-weight: 600;
+}
+
+.settings {
+  font-size: 16px;
+  font-weight: 600;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.limit {
+  color: red;
+}
+
+.inputGroup {
+  display: flex;
+  justify-content: space-around;
+}
+
+.msg {
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+}
+
+.errorMsg {
+  color: red;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+}
