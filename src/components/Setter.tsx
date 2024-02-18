@@ -19,15 +19,16 @@ const Setter = ({
   setStatus,
 }: PropsType) => {
   const error = status === Status.ERROR;
+
   const onChangeValuesHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, valueAsNumber } = e.currentTarget;
-
     changeValues(name, valueAsNumber);
   };
 
   const onFocusHandler = (e: FocusEvent<HTMLInputElement>) => {
     if (!error) setStatus(Status.SETTINGS);
   };
+
   return (
     <div className="container">
       <div className={`${s.display}  ${s.settings}`}>

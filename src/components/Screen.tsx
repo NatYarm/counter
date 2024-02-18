@@ -1,6 +1,3 @@
-import Button from './Button';
-import Display from './Display';
-
 type PropsType = {
   children: React.ReactNode;
 };

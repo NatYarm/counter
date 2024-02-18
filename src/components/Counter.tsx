@@ -18,6 +18,13 @@ const Counter = ({
   resetValue,
 }: PropsType) => {
   const error = status === Status.ERROR;
+
+  const display: Record<Status, string> = {
+    [Status.ERROR]: 'Invalid input value!',
+    [Status.SETTINGS]: "enter values and press 'set'",
+    [Status.COUNTER]: String(displayValue),
+  };
+
   const classNames = `
 	${s.display}
 	${
@@ -30,11 +37,6 @@ const Counter = ({
 	${displayValue === maxValue ? s.limit : ''}
 `;
 
-  const display: Record<Status, string> = {
-    [Status.ERROR]: 'Invalid input value!',
-    [Status.SETTINGS]: "enter values and press 'set'",
-    [Status.COUNTER]: String(displayValue),
-  };
   return (
     <div className="container">
       <div className={classNames}>{display[status]}</div>
