@@ -1,5 +1,5 @@
-import { Status } from '../App';
-import Button from './Button';
+import { Status } from '../App-v1';
+import Button from '../../../components/Button';
 import s from './Display.module.css';
 
 type PropsType = {

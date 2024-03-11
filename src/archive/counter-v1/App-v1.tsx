@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
-import Counter from './components/Counter';
-import Setter from './components/Setter';
+import Counter from './components-v1/Counter';
+import Setter from './components-v1/Setter';
 
 export type valuesType = { startValue: number; maxValue: number };
 

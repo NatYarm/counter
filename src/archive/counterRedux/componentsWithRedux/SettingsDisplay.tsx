@@ -5,9 +5,9 @@ import {
   setNewValuesAC,
   changeStatusAC,
   setNewDisplayValueAC,
-} from '../reducers/counterReducer';
-import Button from '../../components/Button';
-import { valuesSelector } from '../store/selector';
+} from '../bll/reducers/counterReducer';
+import Button from '../../../components/Button';
+import { valuesSelector } from '../bll/store/selector';
 
 const SettingsDisplay = () => {
   const values = useSelector(valuesSelector);

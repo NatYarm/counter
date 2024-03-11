@@ -90,13 +90,3 @@ type ChangeStatusActionType = ReturnType<typeof changeStatusAC>;
 export const changeStatusAC = (newStatus: Status) => {
   return { type: 'CHANGE_STATUS', newStatus } as const;
 };
-
-// type ChangeStartValueActionType = ReturnType<typeof changeStartValueAC>;
-// export const changeStartValueAC = (newStartValue: number) => {
-//   return { type: 'CHANGE_START_VALUE', newStartValue } as const;
-// };
-
-// type ChangeMaxValueActionType = ReturnType<typeof changeMaxValueAC>;
-// export const changeMaxValueAC = (newMaxValue: number) => {
-//   return { type: 'CHANGE_MAX_VALUE', newMaxValue } as const;
-// };

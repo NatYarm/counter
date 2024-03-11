@@ -1,17 +1,20 @@
 import s from '../../components/Display.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  Status,
   setNewValuesAC,
-  changeStatusAC,
   setNewDisplayValueAC,
-} from '../reducers/counterReducer';
+} from '../bll/reducers/counterReducer';
 import Button from '../../components/Button';
-import { valuesSelector } from '../store/selector';
+import { valuesSelector } from '../bll/store/selectors/valuesSelector';
+import { Status, changeStatusAC } from '../bll/reducers/statusReducer';
+import { statusSelector } from '../bll/store/selectors/statusSelector';
+//import { restoreState, saveState } from '../localStorage/localStorage';
 
 const SettingsDisplay = () => {
-  const values = useSelector(valuesSelector);
-  const { startValue, maxValue, status } = values;
+  const status = useSelector(statusSelector);
+  const { startValue, maxValue } = useSelector(valuesSelector);
+  //const allValues = useSelector(valuesSelector);
+
   const dispatch = useDispatch();
   const error = status === Status.ERROR;
 
@@ -31,6 +34,9 @@ const SettingsDisplay = () => {
   };
 
   const setNewDispayValueHandler = () => {
+    // const currentState = restoreState('counterState', {});
+    // saveState('counterState', { ...currentState, ...allValues });
+
     dispatch(setNewDisplayValueAC());
     dispatch(changeStatusAC(Status.COUNTER));
   };
@@ -46,7 +52,7 @@ const SettingsDisplay = () => {
             min="0"
             step="1"
             name="maxValue"
-            value={isNaN(maxValue) ? '' : String(maxValue)}
+            value={isNaN(maxValue) ? '' : maxValue}
             onChange={onChangeValuesHandler}
           />
         </div>
@@ -58,7 +64,7 @@ const SettingsDisplay = () => {
             min="0"
             step="1"
             name="startValue"
-            value={isNaN(startValue) ? '' : String(startValue)}
+            value={isNaN(startValue) ? '' : startValue}
             onChange={onChangeValuesHandler}
           />
         </div>
@@ -75,3 +81,5 @@ const SettingsDisplay = () => {
 };
 
 export default SettingsDisplay;
+
+//commented code is for saving values to local storage on 'set' button click

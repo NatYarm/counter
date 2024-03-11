@@ -1,13 +1,13 @@
 import { useDispatch } from 'react-redux';
-import Button from '../../components/Button';
+import Button from '../../../components/Button';
 import {
   Status,
   incValueAC,
   resetDisplayValueAC,
-} from '../reducers/counterReducer';
+} from '../bll/reducers/counterReducer';
 import s from '../../components/Display.module.css';
 import { useSelector } from 'react-redux';
-import { valuesSelector } from '../store/selector';
+import { valuesSelector } from '../bll/store/selector';
 
 const CounterDisplay = () => {
   const values = useSelector(valuesSelector);

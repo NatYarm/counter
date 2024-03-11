@@ -1,16 +1,18 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Button from '../../components/Button';
 import {
-  Status,
   incValueAC,
   resetDisplayValueAC,
-} from '../reducers/counterReducer';
+} from '../bll/reducers/counterReducer';
 import s from '../../components/Display.module.css';
-import { valuesSelector } from '../store/selector';
+import { valuesSelector } from '../bll/store/selectors/valuesSelector';
+import { Status } from '../bll/reducers/statusReducer';
+
+import { statusSelector } from '../bll/store/selectors/statusSelector';
 
 const CounterDisplay = () => {
-  const values = useSelector(valuesSelector);
-  const { maxValue, displayValue, status } = values;
+  const { maxValue, displayValue } = useSelector(valuesSelector);
+  const status = useSelector(statusSelector);
   const dispatch = useDispatch();
 
   const classNames = `
@@ -32,7 +34,7 @@ const CounterDisplay = () => {
   const display: Record<Status, string> = {
     [Status.ERROR]: 'Invalid input value!',
     [Status.SETTINGS]: "enter values and press 'set'",
-    [Status.COUNTER]: String(values.displayValue),
+    [Status.COUNTER]: String(displayValue),
   };
 
   const resetDisplayValue = () => {

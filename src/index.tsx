@@ -1,19 +1,16 @@
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-
-import AppWithRedux from './AppWithRedux';
-import AppReduxLocalStorage from './AppReduxLocalStorage';
-import { store } from './counterReduxLocalStorage/store/store';
+import App from './counter/componentsReduxLocalStorage/App';
+import { store } from './counter/bll/store/store';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <Provider store={store}>
-    <AppReduxLocalStorage />
+    <App />
   </Provider>
 );
 

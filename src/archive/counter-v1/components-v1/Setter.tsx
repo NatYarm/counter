@@ -1,7 +1,7 @@
 import { FocusEvent } from 'react';
 import s from './Display.module.css';
-import { Status, valuesType } from '../App';
-import Button from './Button';
+import { Status, valuesType } from '../App-v1';
+import Button from '../../../components/Button';
 
 type PropsType = {
   values: valuesType;
